@@ -206,7 +206,13 @@ https://github.com/juhaautioniemi/jetson-nodered/blob/main/images/nodered_tf.JPG
 
 First inference also has slow start and it takes something like ~5-30 seconds. After that it should run smoothly.
 
-## Inference results
+## Inference results 
+
+GUI is disabled
+
+```sudo service gdm stop```
+
+```sudo systemctl set-default multi-user.target```
 
 Inference speeds for MJPEG stream from Raspberry PI4 with HQ-camera
 
@@ -218,6 +224,8 @@ Streaming is started with command
 
 Raspivid MJPEG stream is parsed in Node-RED at RPI4 and rerouted to Jetson via Websocket.
 
+NVIDIA Jetson Xavier NX
+
 | Resolution    | FPS           | Frame size    |
 | ------------- |:-------------:|:-------------:| 
 | 320 x 240     | 15            | ~35 kB        |
@@ -226,3 +234,16 @@ Raspivid MJPEG stream is parsed in Node-RED at RPI4 and rerouted to Jetson via W
 | 4000 x 600    | 8	            | ~112 kB       |
 | 2028 x 1520   | 5             | ~121 kB       |
 | 4056 x 1520   | 3		          | ~137 kB       |
+
+NVIDIA Jetson Nano
+
+| Resolution    | FPS           | Frame size    |
+| ------------- |:-------------:|:-------------:| 
+| 320 x 240     | 8             | ~35 kB        |
+| 1280 x 720    | 6             | ~115 kB       |
+| 1920 x 1080   | 5	            | ~122 kB       |
+| 4000 x 600    | 4             | ~112 kB       |
+| 2028 x 1520   | 3             | ~121 kB       |
+| 4056 x 1520   | 2		          | ~137 kB       |
+
+
