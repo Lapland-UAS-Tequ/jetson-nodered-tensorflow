@@ -177,9 +177,16 @@ Installation will finish with errors. Ignore errors and continue.
 17b. Install node-red-contrib-tf-model and useful tools
 
 ```cd ~/.node-red```
+
 ```npm install node-red-contrib-tf-model```
+
 ```npm install node-red-contrib-post-object-detection```
+
 ```npm install node-red-contrib-tf-function```
+
+"node-red-contrib-post-object-detection"-node might need some additonal libraries installed:
+
+```sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev```
 
 
 Finally Start Node-RED
