@@ -20,7 +20,7 @@ After running all commands you should have following versions of the components
 
 1. Install Jetpack 4.5.1 for Jetson NX Xavier
 
-https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup
+https://developer.nvidia.com/embedded/learn/getting-started-jetson
 
 2. Run update & upgrade
 
