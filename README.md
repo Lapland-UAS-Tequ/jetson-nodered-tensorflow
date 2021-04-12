@@ -5,9 +5,9 @@ This guide is for using node-red-contrib-cloud-annotations-gpu node on Node-RED 
 
 After running all commands you should have following versions of the components
 
-*Jetpack	4.5.1
-*Cuda 	10.0.326
-*cuDNN	7.6.3.28	
+  *Jetpack	4.5.1
+  *Cuda 	10.0.326
+  *cuDNN	7.6.3.28	
 *tfjs-node-gpu 3.3.0	
 *libtensorflow	1.15.0	
 *node-red	1.3.1	
