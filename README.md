@@ -77,6 +77,8 @@ https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup
 
 ```jtop```
 
+![alt text](https://github.com/juhaautioniemi/jetson-nodered/blob/main/images/jtop_image.JPG "jtop")
+
 
 
 
