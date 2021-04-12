@@ -31,24 +31,40 @@ run
 ```sudo apt autoremove```
 
 run
+
 ```sudo reboot```
 
 Download Cuda 10 & cuDnn files
+
 ```wget```
 
+
+```wget```
+
+
 Install Cuda 10
+
 ```sudo dpkg -i cuda-repo-l4t-8-0-local_8.0.34-1_arm64.deb```
+
 ```sudo apt update```
+
 ```sudo apt search cuda```
+
 ```sudo apt install cuda-toolkit-10.0```
+
 ```sudo apt install cuda-samples-10.0```
+
 ```export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}```
+
 ```export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}``` 
 
 Install cuDnn
+
 ```sudo apt install ./libcudnn7_7.6.3.28-1+cuda10.0_arm64.deb```
 
-Check with jtop that everything is installed correctly
+Check with jtop that everything is installed correctly 
+
+```jtop```
 
 
 
