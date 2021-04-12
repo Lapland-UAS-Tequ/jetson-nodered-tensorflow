@@ -10,7 +10,7 @@ After running all commands you should have following versions of the components
 | CUDA          | 10.0.326      |  
 | cuDNN         | 7.6.3.28	     | 
 | libtensorflow | 1.15.0		      | 
-| node-red	     | 1.2.9	        |
+| node-red	     | 1.3.1	        |
 | a) tfjs-node-gpu | 1.4.0	        | 
 | a) node-red-contrib-cloud-annotations-gpu | 0.0.5 |
 | b) tfjs-node | 3.3.0	        | 
