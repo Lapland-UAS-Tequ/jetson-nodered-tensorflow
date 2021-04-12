@@ -1,6 +1,6 @@
 # jetson-nodered
 
-This guide is for using node-red-contrib-cloud-annotations-gpu node on Node-RED and making predicitions with Tensorflow. At the moment of writing this tfjs-node depends on libtensorflow version 1.15.0, so downgrading Cuda on Jetson Xavier NX is necessary to make things work. If you are using Jetson Nano, you can install Jetpack 4.3 and skip removing and installing Cuda in this guide.
+This guide is for using node-red-contrib-cloud-annotations-gpu node on Node-RED and making predicitions with Tensorflow. At the moment of writing this tfjs-node depends on libtensorflow version 1.15.0, so downgrading Cuda on Jetson Xavier NX is necessary to make things work. If you are using Jetson Nano, you can install Jetpack 4.3 from official NVIDIA Jetpack 4.3 image and start from list item 9.
 
 After running all commands you should have following versions of the components
 
@@ -9,9 +9,9 @@ After running all commands you should have following versions of the components
 | Jetpack       | 4.5.1         | 
 | Cuda          | 10.0.326      |  
 | cuDNN         | 7.6.3.28	     | 
-| tfjs-node-gpu | 3.3.0	        | 
+| tfjs-node-gpu | 1.4.0	        | 
 | libtensorflow | 1.15.0		      | 
-| node-red	     | 1.3.1	        |
+| node-red	     | 1.2.9	        |
 | node-red-contrib-cloud-annotations | 0.0.5 |
 
 
@@ -77,7 +77,7 @@ https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup
 
 ![alt text](https://github.com/juhaautioniemi/jetson-nodered/blob/main/images/jtop_image.JPG "jtop")
 
-9. Install node-red
+9. Install node-red (start here if you have Jetson Nano with Jetpack 4.3)
 
 ```bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)```
 
@@ -97,13 +97,46 @@ https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform/index
 
 ```sudo pip3 install tensorflow-gpu/tensorflow_gpu-1.15.0+nv20.1-cp36-cp36m-linux_aarch64.whl```
 
-Check that tensorflow is working
+11. Check that tensorflow is working
 
 ```python3```
 
 ```import tensorflow```
 
+![alt text](https://github.com/juhaautioniemi/jetson-nodered/blob/main/images/tf_python3_image.JPG "tf_python")
 
+12. Install node-red-contrib-cloud-annotations-gpu
+
+```cd ~/.node-red```
+
+```npm install node-red-contrib-cloud-annotations-gpu```
+
+Installation will finish with errors. Ignore errors and continue.
+
+
+13. Move to folder tfjs-node-gpu
+
+```cd ~/.node-red/node_modules/@tensorflow/tfjs-node-gpu/deps```
+
+14. Download libtensorflow 1.15.0
+
+```wget https://jetson-nodered-files.s3.eu.cloud-object-storage.appdomain.cloud/libtensorflow-gpu-linux-arm64-1.15.0.tar.gz```
+
+15. Extract libtensorflow package
+
+```tar xzvf libtensorflow-gpu-linux-arm64-1.15.0.tar.gz```
+
+16. Install libtensorflow package
+
+```npm run build-addon-from-source```
+
+17. Start Node-RED
+
+```node-red-start```
+
+Starting Node-RED and loading Tensorflow seems to take 1-2 minutes at first start.
+
+You should see something like this, if everything went well:
 
 
 
