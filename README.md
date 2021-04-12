@@ -19,31 +19,31 @@ node-red-contrib-cloud-annotations 0.0.5
 https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup
 
 run
-sudo apt update && sudo apt upgrade
+```sudo apt update && sudo apt upgrade```
 
 run
-sudo apt purge cuda-tools-10-2 libcudnn8 cuda-documentation-10-2 cuda-samples-10-2 nvidia-l4t-graphics-demos ubuntu-wallpapers-bionic libreoffice* chromium-browser* thunderbird fonts-noto-cjk
+```sudo apt purge cuda-tools-10-2 libcudnn8 cuda-documentation-10-2 cuda-samples-10-2 nvidia-l4t-graphics-demos ubuntu-wallpapers-bionic libreoffice* chromium-browser* thunderbird fonts-noto-cjk```
 
 run
-sudo apt autoremove
+```sudo apt autoremove```
 
 run
-sudo reboot
+```sudo reboot```
 
 Download Cuda 10 & cuDnn files
-wget 
+```wget```
 
 Install Cuda 10
-sudo dpkg -i cuda-repo-l4t-8-0-local_8.0.34-1_arm64.deb
-sudo apt update
-sudo apt search cuda 
-sudo apt install cuda-toolkit-10.0
-sudo apt install cuda-samples-10.0
-export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}} 
+```sudo dpkg -i cuda-repo-l4t-8-0-local_8.0.34-1_arm64.deb```
+```sudo apt update```
+```sudo apt search cuda```
+```sudo apt install cuda-toolkit-10.0```
+```sudo apt install cuda-samples-10.0```
+```export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}```
+```export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}``` 
 
 Install cuDnn
-sudo apt install ./libcudnn7_7.6.3.28-1+cuda10.0_arm64.deb
+```sudo apt install ./libcudnn7_7.6.3.28-1+cuda10.0_arm64.deb```
 
 Check with jtop that everything is installed correctly
 
