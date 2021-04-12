@@ -41,15 +41,13 @@ https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup
 
 ```cd /home/cuda_files```
 
-4. Download new cuda & cuDnn files
+5. Download new cuda & cuDnn files
 
-```wget```
+```wget https://jetson-nodered-files.s3.eu.cloud-object-storage.appdomain.cloud/cuda-repo-l4t-10-0-local-10.0.326_1.0-1_arm64.deb```
 
+```wget https://jetson-nodered-files.s3.eu.cloud-object-storage.appdomain.cloud/libcudnn7_7.6.3.28-1+cuda10.0_arm64.deb```
 
-```wget```
-
-
-5. Install Cuda 10
+6. Install Cuda 10
 
 ```sudo dpkg -i cuda-repo-l4t-8-0-local_8.0.34-1_arm64.deb```
 
@@ -65,11 +63,11 @@ https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup
 
 ```export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}``` 
 
-6. Install cuDnn
+7. Install cuDnn
 
 ```sudo apt install ./libcudnn7_7.6.3.28-1+cuda10.0_arm64.deb```
 
-7. Install jtop and check that everything is installed correctly
+8. Install jtop and check that everything is installed correctly
 
 ```sudo apt-get install python3-pip```
 
@@ -78,6 +76,42 @@ https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup
 ```jtop```
 
 ![alt text](https://github.com/juhaautioniemi/jetson-nodered/blob/main/images/jtop_image.JPG "jtop")
+
+9. Install node-red
+
+```bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)```
+
+10. Install tensorflow 1.15.0 
+
+https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform/index.html
+
+```sudo apt-get update```
+
+```sudo apt-get install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev gfortran```
+
+```sudo pip3 install -U pip testresources setuptools==49.6.0```
+
+```sudo pip3 install -U numpy==1.19.4 future==0.18.2 mock==3.0.5 h5py==2.10.0 keras_preprocessing==1.1.1 keras_applications==1.0.8 gast==0.2.2 futures protobuf pybind11```
+
+```wget https://jetson-nodered-files.s3.eu.cloud-object-storage.appdomain.cloud/tensorflow_gpu-1.15.0+nv20.1-cp36-cp36m-linux_aarch64.whl```
+
+```sudo pip3 install tensorflow-gpu/tensorflow_gpu-1.15.0+nv20.1-cp36-cp36m-linux_aarch64.whl```
+
+Check that tensorflow is working
+
+```python3```
+
+```import tensorflow```
+
+
+
+
+
+
+
+
+
+
 
 
 
