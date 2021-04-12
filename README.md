@@ -19,12 +19,15 @@ node-red-contrib-cloud-annotations 0.0.5
 https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup
 
 run
+
 ```sudo apt update && sudo apt upgrade```
 
 run
+
 ```sudo apt purge cuda-tools-10-2 libcudnn8 cuda-documentation-10-2 cuda-samples-10-2 nvidia-l4t-graphics-demos ubuntu-wallpapers-bionic libreoffice* chromium-browser* thunderbird fonts-noto-cjk```
 
 run
+
 ```sudo apt autoremove```
 
 run
