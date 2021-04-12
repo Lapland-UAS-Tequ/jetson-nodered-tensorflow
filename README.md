@@ -119,7 +119,7 @@ For example if removing node-red-contrib-cloud-annotations-gpu and installed dep
 
 ```sudo rm -r -f /.node-red/node_modules/@tensorflow/```
 
-```Edit  /.node-red/package.json and remove 
+```Edit  /.node-red/package.json and remove reference to node-red-contrib-cloud-annotations-gpu```
 
 ## Option a) Install node-red-contrib-cloud-annotations-gpu to Node-RED
 
@@ -195,7 +195,7 @@ https://github.com/juhaautioniemi/jetson-nodered/blob/main/images/nodered_tf.JPG
 
 First inference also has slow start and it takes something like ~5-30 seconds. After that it should run smoothly.
 
-##Inference results
+## Inference results
 
 Inference speeds for MJPEG stream from Raspberry PI4 with HQ-camera
 
