@@ -35,6 +35,8 @@ https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup
 
 ```cd /home/```
 
+```cd /<your user name>/```
+
 ```mkdir cuda_files```
 
 ```cd /home/cuda_files```
@@ -67,9 +69,15 @@ https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#setup
 
 ```sudo apt install ./libcudnn7_7.6.3.28-1+cuda10.0_arm64.deb```
 
-Check with jtop that everything is installed correctly 
+7. Install jtop and check that everything is installed correctly
+
+```sudo apt-get install python3-pip```
+
+```sudo -H pip3 install -U jetson-stats```
 
 ```jtop```
+
+
 
 
 
