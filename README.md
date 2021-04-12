@@ -7,7 +7,7 @@ After running all commands you should have following versions of the components
 | Software      | Version       | 
 | ------------- |:-------------:| 
 | Jetpack       | 4.5.1         | 
-| Cuda          | 10.0.326      |  
+| CUDA          | 10.0.326      |  
 | cuDNN         | 7.6.3.28	     | 
 | libtensorflow | 1.15.0		      | 
 | node-red	     | 1.2.9	        |
@@ -26,7 +26,7 @@ https://developer.nvidia.com/embedded/learn/getting-started-jetson
 
 ```sudo apt update && sudo apt upgrade```
 
-3. Remove current Cuda installation
+3. Remove current CUDA installation
 
 ```sudo apt purge cuda-tools-10-2 libcudnn8 cuda-documentation-10-2 cuda-samples-10-2 nvidia-l4t-graphics-demos ubuntu-wallpapers-bionic libreoffice* chromium-browser* thunderbird fonts-noto-cjk```
 
@@ -44,13 +44,13 @@ https://developer.nvidia.com/embedded/learn/getting-started-jetson
 
 ```cd /home/cuda_files```
 
-5. Download new cuda & cuDnn files
+5. Download new CUDA & cuDNN files
 
 ```wget https://jetson-nodered-files.s3.eu.cloud-object-storage.appdomain.cloud/cuda-repo-l4t-10-0-local-10.0.326_1.0-1_arm64.deb```
 
 ```wget https://jetson-nodered-files.s3.eu.cloud-object-storage.appdomain.cloud/libcudnn7_7.6.3.28-1+cuda10.0_arm64.deb```
 
-6. Install Cuda 10
+6. Install CUDA 10
 
 ```sudo dpkg -i cuda-repo-l4t-8-0-local_8.0.34-1_arm64.deb```
 
@@ -66,7 +66,7 @@ https://developer.nvidia.com/embedded/learn/getting-started-jetson
 
 ```export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}``` 
 
-7. Install cuDnn
+7. Install cuDNN
 
 ```sudo apt install ./libcudnn7_7.6.3.28-1+cuda10.0_arm64.deb```
 
