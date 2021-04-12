@@ -16,6 +16,7 @@ After running all commands you should have following versions of the components
 | node-red-contrib-cloud-annotations | 0.0.5 |
 | node-red-contrib-tf-model-annotations | 0.1.11|
 
+#Installation
 
 1. Install Jetpack 4.5.1 for Jetson NX Xavier
 
@@ -107,6 +108,19 @@ https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform/index
 
 ![alt text](https://github.com/juhaautioniemi/jetson-nodered/blob/main/images/tf_python3_image.JPG "tf_python")
 
+
+You should select either node-red-contrib-cloud-annotations-gpu or node-red-contrib-tf-model. Installing both might work, or not. If you wish to change at some point, easiest way is to uninstall npm packages and remove `~/.node-red/node_modules/@tensorflow/` folder and install again option a or option b. If there are problems uninstalling packages, you can stop node-red (node-red-stop) and remove everything manually.
+
+For example if removing node-red-contrib-cloud-annotations-gpu and installed dependencies
+
+```sudo rm -r -f /.node-red/node_modules/@cloud-annotations```
+
+```sudo rm -r -f /.node-red/node_modules/node-red-contrib-cloud-annotations-gpu```
+
+```sudo rm -r -f /.node-red/node_modules/@tensorflow/```
+
+```Edit  /.node-red/package.json and remove 
+
 ## Option a) Install node-red-contrib-cloud-annotations-gpu to Node-RED
 
 12a. Install node-red-contrib-cloud-annotations-gpu
@@ -168,7 +182,6 @@ Installation will finish with errors. Ignore errors and continue.
 ```npm install node-red-contrib-tf-function```
 
 
-
 Finally Start Node-RED
 
 ```node-red-start```
@@ -180,16 +193,25 @@ You should see something like this in Node-RED log, if everything went well:
 ![alt text](
 https://github.com/juhaautioniemi/jetson-nodered/blob/main/images/nodered_tf.JPG "Node-RED log")
 
+First inference also has slow start and it takes something like ~5-30 seconds. After that it should run smoothly.
 
+##Inference results
 
+Inference speeds for MJPEG stream from Raspberry PI4 with HQ-camera
 
+Streaming is started with command 
 
+```raspivid -v -n -b 25000000 -qp 10 -md 2 -w 1920 -h 1080 -fps 25 -cd MJPEG -n -rot 180 -t 0 -o tcp://127.0.0.1:50001```
 
+*md (mode) and w and h parameters can vary.
 
+Raspivid MJPEG stream is parsed in Node-RED at RPI4 and rerouted to Jetson via Websocket.
 
-
-
-
-
-
-
+| Resolution    | FPS           | Frame size    |
+| ------------- |:-------------:|:-------------:| 
+| 320 x 240     | 15            | ~35 kB        |
+| 1280 x 720    | 10            | ~115 kB       |
+| 1920 x 1080   | 8	            | ~122 kB       |
+| 4000 x 600    | 8	            | ~112 kB       |
+| 2028 x 1520   | 5             | ~121 kB       |
+| 4056 x 1520   | 3		          | ~137 kB       |
