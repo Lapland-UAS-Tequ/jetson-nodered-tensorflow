@@ -6,7 +6,7 @@ After running all commands you should have following versions of the components
 
 | Software      | Version       | 
 | ------------- |:-------------:| 
-| Jetpack       | 4.5.1         | 
+| Jetpack       | 4.5.1 or 4.3  | 
 | CUDA          | 10.0.326      |  
 | cuDNN         | 7.6.3.28	     | 
 | libtensorflow | 1.15.0		      | 
