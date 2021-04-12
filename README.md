@@ -145,6 +145,8 @@ Installation will finish with errors. Ignore errors and continue.
 
 16a. Install libtensorflow package
 
+```sudo npm install --global node-pre-gyp```
+
 ```npm run build-addon-from-source```
 
 
@@ -171,6 +173,8 @@ Installation will finish with errors. Ignore errors and continue.
 ```tar xzvf libtensorflow-gpu-linux-arm64-1.15.0.tar.gz```
 
 16b. Install libtensorflow package
+
+```sudo npm install --global node-pre-gyp```
 
 ```npm run build-addon-from-source```
 
