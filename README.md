@@ -1,6 +1,6 @@
 # jetson-nodered
 
-This guide is for using "node-red-contrib-cloud-annotations-gpu"-node or "node-red-contrib-tf-model"-node on Node-RED in Jetson Nano or Xavier NX device and making predicitions with Tensorflow. Might work on Xavier AGX also, but I didnt have one to test. At the moment of writing this tfjs-node-gpu directly depends on libtensorflow version 1.15.0, so downgrading Cuda on Jetson Xavier NX is necessary to make things work. If you are using Jetson Nano, you can install Jetpack 4.3 from official NVIDIA Jetpack 4.3 image and start from list item 9.
+This guide is for using "node-red-contrib-cloud-annotations-gpu"-node or "node-red-contrib-tf-model"-node on Node-RED in Jetson Nano or Xavier NX device and making predictions with Tensorflow. Might work on Xavier AGX also, but I didnt have one to test. At the moment of writing this tfjs-node-gpu directly depends on libtensorflow version 1.15.0, so downgrading Cuda on Jetson Xavier NX is necessary to make things work. If you are using Jetson Nano, you can install Jetpack 4.3 from official NVIDIA Jetpack 4.3 image and start from list item 9.
 
 After running all commands you should have following versions of the components
 
@@ -9,12 +9,12 @@ After running all commands you should have following versions of the components
 | Jetpack       | 4.5.1         | 
 | Cuda          | 10.0.326      |  
 | cuDNN         | 7.6.3.28	     | 
-| tfjs-node-gpu | 1.4.0	        | 
-| tfjs-node | 3.3.0	        | 
 | libtensorflow | 1.15.0		      | 
 | node-red	     | 1.2.9	        |
-| node-red-contrib-cloud-annotations | 0.0.5 |
-| node-red-contrib-tf-model-annotations | 0.1.11|
+| a) tfjs-node-gpu | 1.4.0	        | 
+| a) node-red-contrib-cloud-annotations-gpu | 0.0.5 |
+| b) tfjs-node | 3.3.0	        | 
+| b) node-red-contrib-tf-model-annotations | 0.1.11|
 
 ## Installation
 
