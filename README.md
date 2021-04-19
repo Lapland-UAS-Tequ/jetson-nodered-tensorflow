@@ -78,7 +78,7 @@ https://developer.nvidia.com/embedded/learn/getting-started-jetson
 
 ```jtop```
 
-![alt text](https://github.com/juhaautioniemi/jetson-nodered/blob/main/images/jtop_image.JPG "jtop")
+![alt text](https://github.com/juhaautioniemi/jetson-nodered/blob/master/images/jtop_image.JPG "jtop")
 
 9. Install node-red (start here if you have Jetson Nano with Jetpack 4.3)
 
@@ -106,7 +106,7 @@ https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform/index
 
 ```import tensorflow```
 
-![alt text](https://github.com/juhaautioniemi/jetson-nodered/blob/main/images/tf_python3_image.JPG "tf_python")
+![alt text](https://github.com/juhaautioniemi/jetson-nodered/blob/master/images/tf_python3_image.JPG "tf_python")
 
 
 You should select either node-red-contrib-cloud-annotations-gpu or node-red-contrib-tf-model. Installing both might work, or not. If you wish to change at some point, easiest way is to uninstall npm packages and remove `~/.node-red/node_modules/@tensorflow/` folder and install again option a or option b. If there are problems uninstalling packages, you can stop node-red (node-red-stop) and remove everything manually.
@@ -202,7 +202,7 @@ Starting Node-RED and loading Tensorflow seems to take 1-2 minutes at first star
 You should see something like this in Node-RED log, if everything went well:
 
 ![alt text](
-https://github.com/juhaautioniemi/jetson-nodered/blob/main/images/nodered_tf.JPG "Node-RED log")
+https://github.com/juhaautioniemi/jetson-nodered/blob/master/images/nodered_tf.JPG "Node-RED log")
 
 First inference also has slow start and it takes something like ~5-30 seconds. After that it should run smoothly.
 
