@@ -24,87 +24,147 @@ https://developer.nvidia.com/embedded/learn/getting-started-jetson
 
 2. Run update & upgrade
 
-```sudo apt update && sudo apt upgrade```
+```
+sudo apt update && sudo apt upgrade
+```
 
 3. Remove current CUDA installation
 
-```sudo apt purge cuda-tools-10-2 libcudnn8 cuda-documentation-10-2 cuda-samples-10-2 nvidia-l4t-graphics-demos ubuntu-wallpapers-bionic libreoffice* chromium-browser* thunderbird fonts-noto-cjk```
+```
+sudo apt purge cuda-tools-10-2 libcudnn8 cuda-documentation-10-2 cuda-samples-10-2 nvidia-l4t-graphics-demos ubuntu-wallpapers-bionic libreoffice* chromium-browser* thunderbird fonts-noto-cjk
+```
 
-```sudo apt autoremove```
+```
+sudo apt autoremove
+```
 
-```sudo reboot```
+```
+sudo reboot
+```
 
 4. Create folder for files
 
-```cd /home/```
+```
+cd /home/
+```
 
-```cd /<your user name>/```
+```
+cd /<your user name>/
+```
 
-```mkdir cuda_files```
+```
+mkdir cuda_files
+```
 
-```cd /home/cuda_files```
+```
+cd /home/cuda_files
+```
 
 5. Download new CUDA & cuDNN files
 
-```wget https://jetson-nodered-files.s3.eu.cloud-object-storage.appdomain.cloud/cuda-repo-l4t-10-0-local-10.0.326_1.0-1_arm64.deb```
+```
+wget https://jetson-nodered-files.s3.eu.cloud-object-storage.appdomain.cloud/cuda-repo-l4t-10-0-local-10.0.326_1.0-1_arm64.deb
+```
 
-```wget https://jetson-nodered-files.s3.eu.cloud-object-storage.appdomain.cloud/libcudnn7_7.6.3.28-1+cuda10.0_arm64.deb```
+```
+wget https://jetson-nodered-files.s3.eu.cloud-object-storage.appdomain.cloud/libcudnn7_7.6.3.28-1+cuda10.0_arm64.deb
+```
 
 6. Install CUDA 10
 
-```sudo dpkg -i cuda-repo-l4t-8-0-local_8.0.34-1_arm64.deb```
+```
+sudo dpkg -i cuda-repo-l4t-8-0-local_8.0.34-1_arm64.deb
+```
 
-```sudo apt update```
+```
+sudo apt update
+```
 
-```sudo apt search cuda```
+```
+sudo apt search cuda
+```
 
-```sudo apt install cuda-toolkit-10.0```
+```
+sudo apt install cuda-toolkit-10.0
+```
 
-```sudo apt install cuda-samples-10.0```
+```
+sudo apt install cuda-samples-10.0
+```
 
-```export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}```
+```
+export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
+```
 
-```export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}``` 
+```
+export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+``` 
 
 7. Install cuDNN
 
-```sudo apt install ./libcudnn7_7.6.3.28-1+cuda10.0_arm64.deb```
+```
+sudo apt install ./libcudnn7_7.6.3.28-1+cuda10.0_arm64.deb
+```
 
 8. Install jtop and check that everything is installed correctly
 
-```sudo apt-get install python3-pip```
+```
+sudo apt-get install python3-pip
+```
 
-```sudo -H pip3 install -U jetson-stats```
+```
+sudo -H pip3 install -U jetson-stats
+```
 
-```jtop```
+```
+jtop
+```
 
 ![alt text](https://github.com/juhaautioniemi/jetson-nodered-tensorflow/blob/master/images/jtop_image.JPG "jtop")
 
 9. Install node-red (start here if you have Jetson Nano with Jetpack 4.3)
 
-```bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)```
+```
+bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
+```
 
 10. Install tensorflow 1.15.0 
 
 https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform/index.html
 
-```sudo apt-get update```
+```
+sudo apt-get update
+```
 
-```sudo apt-get install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev gfortran```
+```
+sudo apt-get install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev gfortran
+```
 
-```sudo pip3 install -U pip testresources setuptools==49.6.0```
+```
+sudo pip3 install -U pip testresources setuptools==49.6.0
+```
 
-```sudo pip3 install -U numpy==1.19.4 future==0.18.2 mock==3.0.5 h5py==2.10.0 keras_preprocessing==1.1.1 keras_applications==1.0.8 gast==0.2.2 futures protobuf pybind11```
+```
+sudo pip3 install -U numpy==1.19.4 future==0.18.2 mock==3.0.5 h5py==2.10.0 keras_preprocessing==1.1.1 keras_applications==1.0.8 gast==0.2.2 futures protobuf pybind11
+```
 
-```wget https://jetson-nodered-files.s3.eu.cloud-object-storage.appdomain.cloud/tensorflow_gpu-1.15.0+nv20.1-cp36-cp36m-linux_aarch64.whl```
+```
+wget https://jetson-nodered-files.s3.eu.cloud-object-storage.appdomain.cloud/tensorflow_gpu-1.15.0+nv20.1-cp36-cp36m-linux_aarch64.whl
+```
 
-```sudo pip3 install tensorflow-gpu/tensorflow_gpu-1.15.0+nv20.1-cp36-cp36m-linux_aarch64.whl```
+```
+sudo pip3 install tensorflow-gpu/tensorflow_gpu-1.15.0+nv20.1-cp36-cp36m-linux_aarch64.whl
+```
 
 11. Check that tensorflow is working
 
-```python3```
+```
+python3
+```
 
-```import tensorflow```
+```
+import tensorflow
+```
 
 ![alt text](https://github.com/juhaautioniemi/jetson-nodered-tensorflow/blob/master/images/tf_python3_image.JPG "tf_python")
 
@@ -113,89 +173,136 @@ You should select either node-red-contrib-cloud-annotations-gpu or node-red-cont
 
 For example if removing node-red-contrib-cloud-annotations-gpu and installed dependencies
 
-```sudo rm -r -f /.node-red/node_modules/@cloud-annotations```
+```
+sudo rm -r -f /.node-red/node_modules/@cloud-annotations
+```
 
-```sudo rm -r -f /.node-red/node_modules/node-red-contrib-cloud-annotations-gpu```
+```
+sudo rm -r -f /.node-red/node_modules/node-red-contrib-cloud-annotations-gpu
+```
 
-```sudo rm -r -f /.node-red/node_modules/@tensorflow/```
+```
+sudo rm -r -f /.node-red/node_modules/@tensorflow/
+```
 
-```Edit  /.node-red/package.json and remove reference to node-red-contrib-cloud-annotations-gpu```
+Edit  ```/.node-red/package.json``` and remove reference to node-red-contrib-cloud-annotations-gpu
+
 
 ## Option a) Install node-red-contrib-cloud-annotations-gpu to Node-RED
 
 12a. Install node-red-contrib-cloud-annotations-gpu
 
-```cd ~/.node-red```
+```
+cd ~/.node-red
+```
 
-```npm install node-red-contrib-cloud-annotations-gpu```
+```
+npm install node-red-contrib-cloud-annotations-gpu
+```
 
 Installation will finish with errors. Ignore errors and continue.
 
 13a. Move to folder tfjs-node-gpu
 
-```cd ~/.node-red/node_modules/@tensorflow/tfjs-node-gpu/deps```
+```
+cd ~/.node-red/node_modules/@tensorflow/tfjs-node-gpu/deps
+```
 
 14a. Download libtensorflow 1.15.0
 
-```wget https://jetson-nodered-files.s3.eu.cloud-object-storage.appdomain.cloud/libtensorflow-gpu-linux-arm64-1.15.0.tar.gz```
+```
+wget https://jetson-nodered-files.s3.eu.cloud-object-storage.appdomain.cloud/libtensorflow-gpu-linux-arm64-1.15.0.tar.gz
+```
 
 15a. Extract libtensorflow package
 
-```tar xzvf libtensorflow-gpu-linux-arm64-1.15.0.tar.gz```
+```
+tar xzvf libtensorflow-gpu-linux-arm64-1.15.0.tar.gz
+```
 
 16a. Install libtensorflow package
 
-```sudo npm install --global node-pre-gyp```
+```
+sudo npm install --global node-pre-gyp
+```
 
-```npm run build-addon-from-source```
+```
+npm run build-addon-from-source
+```
 
 
 ## Option b) Install node-red-contrib-tf-model to Node-RED
 
 12b. Install tfjs-node@3.3.0
 
-```cd ~/.node-red```
+```
+cd ~/.node-red
+```
 
-```npm install @tensorflow/tfjs-node@3.3.0```
+```
+npm install @tensorflow/tfjs-node@3.3.0
+```
 
 Installation will finish with errors. Ignore errors and continue.
 
 13b. Move to folder tfjs-node
 
-```cd ~/.node-red/node_modules/@tensorflow/tfjs-node/deps```
+```
+cd ~/.node-red/node_modules/@tensorflow/tfjs-node/deps
+```
 
 14b. Download libtensorflow 1.15.0
 
-```wget https://jetson-nodered-files.s3.eu.cloud-object-storage.appdomain.cloud/libtensorflow-gpu-linux-arm64-1.15.0.tar.gz```
+```
+wget https://jetson-nodered-files.s3.eu.cloud-object-storage.appdomain.cloud/libtensorflow-gpu-linux-arm64-1.15.0.tar.gz
+```
 
 15b. Extract libtensorflow package
 
-```tar xzvf libtensorflow-gpu-linux-arm64-1.15.0.tar.gz```
+```
+tar xzvf libtensorflow-gpu-linux-arm64-1.15.0.tar.gz
+```
 
 16b. Install libtensorflow package
 
-```sudo npm install --global node-pre-gyp```
+```
+sudo npm install --global node-pre-gyp
+```
 
-```npm run build-addon-from-source```
+```
+npm run build-addon-from-source
+```
 
 17b. Install node-red-contrib-tf-model and useful tools
 
-```cd ~/.node-red```
+```
+cd ~/.node-red
+```
 
-```npm install node-red-contrib-tf-model```
+```
+npm install node-red-contrib-tf-model
+```
 
-```npm install node-red-contrib-post-object-detection```
+```
+npm install node-red-contrib-post-object-detection
+```
 
-```npm install node-red-contrib-tf-function```
+```
+npm install node-red-contrib-tf-function
+```
 
 "node-red-contrib-post-object-detection"-node might need some additonal libraries installed:
 
-```sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev```
+```
+sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
+```
 
 
 Finally Start Node-RED
 
-```node-red-start```
+```
+node-red-start
+```
 
 Starting Node-RED and loading Tensorflow seems to take 1-2 minutes at first start.
 
@@ -210,15 +317,21 @@ First inference also has slow start and it takes something like ~5-30 seconds. A
 
 GUI is disabled
 
-```sudo service gdm stop```
+```
+sudo service gdm stop
+```
 
-```sudo systemctl set-default multi-user.target```
+```
+sudo systemctl set-default multi-user.target
+```
 
 Inference speeds for MJPEG stream from Raspberry PI4 with HQ-camera
 
 Streaming is started with command 
 
-```raspivid -v -n -b 25000000 -qp 10 -md 2 -w 1920 -h 1080 -fps 25 -cd MJPEG -n -rot 180 -t 0 -o tcp://127.0.0.1:50001```
+```
+raspivid -v -n -b 25000000 -qp 10 -md 2 -w 1920 -h 1080 -fps 25 -cd MJPEG -n -rot 180 -t 0 -o tcp://127.0.0.1:50001
+```
 
 *md (mode) and w and h parameters can vary.
 
