@@ -170,7 +170,7 @@ import tensorflow
 
 ### Select nodes to use in Node-RED 
 
-You should select either node-red-contrib-cloud-annotations-gpu or node-red-contrib-tf-model. Installing both might work, or not. If you wish to change at some point, easiest way is to uninstall npm packages and remove `~/.node-red/node_modules/@tensorflow/` folder and install again option a or option b. If there are problems uninstalling packages, you can stop node-red (node-red-stop) and remove everything manually.
+You should select either node-red-contrib-cloud-annotations-gpu or node-red-contrib-tf-model. Installing both might work, or not. If you wish to change at some point, easiest way is to uninstall nodes and remove `~/.node-red/node_modules/@tensorflow/` folder and install again option a or option b. If there are problems uninstalling packages, you can stop node-red (node-red-stop) and remove everything manually.
 
 For example if removing node-red-contrib-cloud-annotations-gpu and installed dependencies
 
