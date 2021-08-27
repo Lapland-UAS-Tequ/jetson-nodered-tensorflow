@@ -205,30 +205,54 @@ sudo npm install --global node-pre-gyp
 npm run build-addon-from-source
 ```
 
-### 17. Use Tensorflow in Node-RED
+### 17. Install canvas for annotating images
 
-Finally Start Node-RED
+https://www.npmjs.com/package/canvas
+
+Install dependencies first
+
+```
+sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
+```
+
+```
+npm install canvas
+```
+
+### 18. Use Tensorflow in Node-RED
+
+Start Node-RED
 
 ```
 node-red-start
 ```
 
-Starting Node-RED and loading Tensorflow seems to take 1-2 minutes at first start.
+### 19. Import example flow 
 
-You should see something like this in Node-RED log, if everything went well:
+Go to:
+
+https://github.com/juhaautioniemi/tequ-api-client/
+
+Copy and import 'example-ai-detect-v2.json' to your Node-RED.
+
+You should see something like this in Node-RED log after flow is deployed, if everything regarding to Tensorflow went well:
 
 ![alt text](
 https://github.com/juhaautioniemi/jetson-nodered-tensorflow/blob/master/images/nodered_tf.JPG "Node-RED log")
 
+### 20. Use Tensorflow in Node-RED
 
-### 18. Use Tensorflow in Node-RED
+Inject image to flow and start detecting objects.
 
-Import [AI] Detect v2 module from 
+First inference is slow and it takes something like ~5-30 seconds. After that it should run smoothly.
 
+### 21. Custom object detection model
 
-First inference also has slow start and it takes something like ~5-30 seconds. After that it should run smoothly.
+If you need to build your own model, you can follow this guide:
 
-## Inference results 
+https://github.com/juhaautioniemi/tequ-tf1-ca-training-pipeline
+
+## 22. Some inference benchmarking 
 
 GUI is disabled
 
