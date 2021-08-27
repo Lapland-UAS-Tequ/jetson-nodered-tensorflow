@@ -8,13 +8,10 @@ After running all commands you should have following versions of the components
 | ------------- |:-------------:| 
 | Jetpack       | 4.5.1 or 4.3  | 
 | CUDA          | 10.0.326      |  
-| cuDNN         | 7.6.3.28	     | 
-| libtensorflow | 1.15.0		      | 
-| node-red	     | 1.3.1	        |
-| a) tfjs-node-gpu | 1.4.0	        | 
-| a) node-red-contrib-cloud-annotations-gpu | 0.0.5 |
-| b) tfjs-node | 3.3.0	        | 
-| b) node-red-contrib-tf-model-annotations | 0.1.11|
+| cuDNN         | 7.6.3.28	    | 
+| libtensorflow | 1.15.0		    | 
+| node-red	     | 2.0.5	      |
+| a) tfjs-node-gpu | 1.4.0	    | 
 
 ## Installation
 
@@ -166,62 +163,39 @@ python3
 import tensorflow
 ```
 
-![alt text](https://github.com/juhaautioniemi/jetson-nodered-tensorflow/blob/master/images/tf_python3_image.JPG "tf_python")
-
-### Select nodes to use in Node-RED 
-
-You should select either node-red-contrib-cloud-annotations-gpu or node-red-contrib-tf-model. Installing both might work, or not. If you wish to change at some point, easiest way is to uninstall nodes and remove `~/.node-red/node_modules/@tensorflow/` folder and install again option a or option b. If there are problems uninstalling packages, you can stop node-red (node-red-stop) and remove everything manually.
-
-For example if removing node-red-contrib-cloud-annotations-gpu and installed dependencies
-
-```
-sudo rm -r -f /.node-red/node_modules/@cloud-annotations
-```
-
-```
-sudo rm -r -f /.node-red/node_modules/node-red-contrib-cloud-annotations-gpu
-```
-
-```
-sudo rm -r -f /.node-red/node_modules/@tensorflow/
-```
-
-Edit  ```/.node-red/package.json``` and remove reference to node-red-contrib-cloud-annotations-gpu
-
-
-### Option a) Install node-red-contrib-cloud-annotations-gpu to Node-RED
-
-### 12a. Install node-red-contrib-cloud-annotations-gpu
+### 12. Install tfjs-node-gpu@1.4.0 and @cloud-annotations/models-node-gpu 
 
 ```
 cd ~/.node-red
 ```
-
 ```
-npm install node-red-contrib-cloud-annotations-gpu
+npm install @tensorflow/tfjs-node-gpu@1.4.0
+```
+```
+npm install @cloud-annotations/models-node-gpu
 ```
 
 Installation will finish with errors. Ignore errors and continue.
 
-### 13a. Move to folder tfjs-node-gpu
+### 13. Move to folder tfjs-node-gpu
 
 ```
 cd ~/.node-red/node_modules/@tensorflow/tfjs-node-gpu/deps
 ```
 
-### 14a. Download libtensorflow 1.15.0
+### 14. Download libtensorflow 1.15.0
 
 ```
 wget https://jetson-nodered-files.s3.eu.cloud-object-storage.appdomain.cloud/libtensorflow-gpu-linux-arm64-1.15.0.tar.gz
 ```
 
-### 15a. Extract libtensorflow package
+### 15. Extract libtensorflow package
 
 ```
 tar xzvf libtensorflow-gpu-linux-arm64-1.15.0.tar.gz
 ```
 
-### 16a. Install libtensorflow package
+### 16. Install libtensorflow package
 
 ```
 sudo npm install --global node-pre-gyp
@@ -231,74 +205,7 @@ sudo npm install --global node-pre-gyp
 npm run build-addon-from-source
 ```
 
-
-### Option b) Install node-red-contrib-tf-model to Node-RED
-
-### 12b. Install tfjs-node@3.3.0
-
-```
-cd ~/.node-red
-```
-
-```
-npm install @tensorflow/tfjs-node@3.3.0
-```
-
-Installation will finish with errors. Ignore errors and continue.
-
-### 13b. Move to folder tfjs-node
-
-```
-cd ~/.node-red/node_modules/@tensorflow/tfjs-node/deps
-```
-
-### 14b. Download libtensorflow 1.15.0
-
-```
-wget https://jetson-nodered-files.s3.eu.cloud-object-storage.appdomain.cloud/libtensorflow-gpu-linux-arm64-1.15.0.tar.gz
-```
-
-### 15b. Extract libtensorflow package
-
-```
-tar xzvf libtensorflow-gpu-linux-arm64-1.15.0.tar.gz
-```
-
-### 16b. Install libtensorflow package
-
-```
-sudo npm install --global node-pre-gyp
-```
-
-```
-npm run build-addon-from-source
-```
-
-### 17b. Install node-red-contrib-tf-model and useful tools
-
-```
-cd ~/.node-red
-```
-
-```
-npm install node-red-contrib-tf-model
-```
-
-```
-npm install node-red-contrib-post-object-detection
-```
-
-```
-npm install node-red-contrib-tf-function
-```
-
-"node-red-contrib-post-object-detection"-node might need some additonal libraries installed:
-
-```
-sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
-```
-
-### Use Tensorflow in Node-RED
+### 17. Use Tensorflow in Node-RED
 
 Finally Start Node-RED
 
@@ -312,6 +219,12 @@ You should see something like this in Node-RED log, if everything went well:
 
 ![alt text](
 https://github.com/juhaautioniemi/jetson-nodered-tensorflow/blob/master/images/nodered_tf.JPG "Node-RED log")
+
+
+### 18. Use Tensorflow in Node-RED
+
+Import [AI] Detect v2 module from 
+
 
 First inference also has slow start and it takes something like ~5-30 seconds. After that it should run smoothly.
 
