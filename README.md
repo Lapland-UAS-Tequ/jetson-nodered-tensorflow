@@ -205,6 +205,21 @@ sudo npm install --global node-pre-gyp
 npm run build-addon-from-source
 ```
 
+test 
+
+```
+cd ~/.node-red
+```
+
+```
+node
+```
+
+```
+var tf = require('@tensorflow/tfjs-node-gpu')
+```
+
+
 ### 17. Install canvas for annotating images
 
 https://www.npmjs.com/package/canvas
