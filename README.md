@@ -1,6 +1,6 @@
-# jetson-nodered
+# jetson-nodered-tensorflow
 
-This guide is for using "node-red-contrib-cloud-annotations-gpu"-node or "node-red-contrib-tf-model"-node on Node-RED in Jetson Nano or Xavier NX device and making predictions with Tensorflow with GPU support. Might work on Xavier AGX also, but I didnt have one to test. At the moment of writing this, tfjs-node(-gpu) directly depends on libtensorflow version 1.15.0, so downgrading CUDA on Jetson Xavier NX is necessary to make things work. If you are using Jetson Nano, you can install Jetpack 4.3 from official NVIDIA Jetpack 4.3 image and start from list item number 9.
+This guide is for using Tensorflow (tfjs-node-gpu) in Node-RED using Jetson Nano or Xavier NX device and run object detection on images. Might work on Xavier AGX also, but I didnt have one to test. At the moment of writing this, tfjs-node(-gpu) directly depends on libtensorflow version 1.15.0, so downgrading CUDA on Jetson Xavier NX is necessary to make things work. If you are using Jetson Nano, you can install Jetpack 4.3 from official NVIDIA Jetpack 4.3 image and start from list item number 9.
 
 After running all commands you should have following versions of the components
 
@@ -10,8 +10,8 @@ After running all commands you should have following versions of the components
 | CUDA          | 10.0.326      |  
 | cuDNN         | 7.6.3.28	    | 
 | libtensorflow | 1.15.0		    | 
-| node-red	     | 2.0.5	      |
-| a) tfjs-node-gpu | 1.4.0	    | 
+| node-red	    | 2.0.5	        |
+| tfjs-node-gpu | 1.4.0	        | 
 
 ## Installation
 
@@ -153,7 +153,7 @@ wget https://jetson-nodered-files.s3.eu.cloud-object-storage.appdomain.cloud/ten
 sudo pip3 install tensorflow-gpu/tensorflow_gpu-1.15.0+nv20.1-cp36-cp36m-linux_aarch64.whl
 ```
 
-### 11. Check that tensorflow is working
+### 11. Check that tensorflow is working in Python
 
 ```
 python3
@@ -242,9 +242,14 @@ https://github.com/juhaautioniemi/jetson-nodered-tensorflow/blob/master/images/n
 
 ### 20. Use Tensorflow in Node-RED
 
+Configure model folder
+
 Inject image to flow and start detecting objects.
 
 First inference is slow and it takes something like ~5-30 seconds. After that it should run smoothly.
+
+![alt text](
+https://github.com/juhaautioniemi/jetson-nodered-tensorflow/blob/master/images/example-1.JPG "Node-RED log")
 
 ### 21. Custom object detection model
 
