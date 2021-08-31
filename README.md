@@ -7,7 +7,7 @@ UPDATE 31.8.2020
 
 Newest tfjs-node-gpu versions (tested with 3.8.0 and 3.9.0) work with newer libtensorflow versions. Check this guide if you want to use Tensorflow 2.
 
-https://github.com/juhaautioniemi/tequ-jetson-nodered-tensorflow/e
+https://github.com/juhaautioniemi/tequ-jetson-nodered-tensorflow/
 *****
 
 After running all commands you should have following versions of the components
