@@ -7,7 +7,7 @@ UPDATE 31.8.2020
 
 Newest tfjs-node-gpu versions (tested with 3.8.0 and 3.9.0) work with newer libtensorflow versions. Check this guide if you want to use Tensorflow 2.
 
-https://github.com/juhaautioniemi/tequ-jetson-nodered-tensorflow/
+https://github.com/Lapland-UAS-Tequ/tequ-jetson-nodered-tensorflow/
 *****
 
 After running all commands you should have following versions of the components
@@ -125,7 +125,7 @@ sudo -H pip3 install -U jetson-stats
 jtop
 ```
 
-![alt text](https://github.com/juhaautioniemi/jetson-nodered-tensorflow/blob/master/images/jtop_image.JPG "jtop")
+![alt text](https://github.com/Lapland-UAS-Tequ/jetson-nodered-tensorflow/blob/master/images/jtop_image.JPG "jtop")
 
 ### 9. Install node-red (start here if you have Jetson Nano with Jetpack 4.3)
 
@@ -254,14 +254,14 @@ node-red-start
 
 Go to:
 
-https://github.com/juhaautioniemi/tequ-api-client/
+https://github.com/Lapland-UAS-Tequ/tequ-api-client/
 
 Copy and import 'example-ai-detect-v2.json' to your Node-RED.
 
 You should see something like this in Node-RED log after flow is deployed, if everything regarding to Tensorflow went well:
 
 ![alt text](
-https://github.com/juhaautioniemi/jetson-nodered-tensorflow/blob/master/images/nodered_tf.JPG "Node-RED log")
+https://github.com/Lapland-UAS-Tequ/jetson-nodered-tensorflow/blob/master/images/nodered_tf.JPG "Node-RED log")
 
 ### 20. Use Tensorflow in Node-RED
 
@@ -272,13 +272,13 @@ Inject image to flow and start detecting objects.
 First inference is slow and it takes something like ~5-30 seconds. After that it should run smoothly.
 
 ![alt text](
-https://github.com/juhaautioniemi/jetson-nodered-tensorflow/blob/master/images/example-1.JPG "Node-RED log")
+https://github.com/Lapland-UAS-Tequ/jetson-nodered-tensorflow/blob/master/images/example-1.JPG "Node-RED log")
 
 ### 21. Custom object detection model
 
 If you need to build your own model, you can follow this guide:
 
-https://github.com/juhaautioniemi/tequ-tf1-ca-training-pipeline
+https://github.com/Lapland-UAS-Tequ/tequ-tf1-ca-training-pipeline
 
 ## 22. Some inference benchmarking 
 
