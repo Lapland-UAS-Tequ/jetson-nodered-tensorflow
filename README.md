@@ -1,3 +1,9 @@
+This repository is developed in Fish-IoT project
+
+https://www.tequ.fi/en/project-bank/fish-iot/ 
+
+---
+
 # jetson-nodered-tensorflow
 
 This guide is for using Tensorflow 1 (tfjs-node-gpu) in Node-RED using Jetson Nano or Xavier NX device and run object detection on images. Might work on Xavier AGX also, but I didnt have one to test. At the moment of writing this, tfjs-node(-gpu) directly depends on libtensorflow version 1.15.0, so downgrading CUDA on Jetson Xavier NX is necessary to make things work. If you are using Jetson Nano, you can install Jetpack 4.3 from official NVIDIA Jetpack 4.3 image and start from list item number 9.
